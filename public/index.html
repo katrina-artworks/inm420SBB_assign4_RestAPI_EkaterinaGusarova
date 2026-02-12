@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Urban Dictionary Lookup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Urban Dictionary Lookup</h1>
+    <p>Search a term and view the first returned definition.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Search</h2>
+      <form id="search-form" novalidate>
+        <label for="term-input">Term</label>
+        <div>
+          <input id="term-input" name="term" type="text" placeholder="Type a word (example: lit)" autocomplete="off"
+            required />
+          <button id="search-btn" type="submit">Search</button>
+        </div>
+        <p>Tip: press Enter to search.</p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Result</h2>
+      <div id="status" aria-live="polite">
+        Enter a term above to begin.
+      </div>
+      <article id="result" aria-live="polite">
+        <h3 id="result-term"></h3>
+        <p id="result-definition"></p>
+        <p id="result-example"></p>
+        <div>
+          <span id="result-author"></span>
+          <span id="result-votes"></span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
