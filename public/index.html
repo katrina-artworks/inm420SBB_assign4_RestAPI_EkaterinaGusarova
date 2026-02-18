@@ -4,40 +4,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Urban Dictionary Lookup</title>
+  <title>Assignment 4 - REST API Demo</title>
+  <!-- External stylesheet – all presentation rules live here -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header>
+  <!-- Site header with page title and brief description -->
+  <header class="site-header">
     <h1>Urban Dictionary Lookup</h1>
-    <p>Search a term and view the first returned definition.</p>
+    <p class="subtitle">Search a term and view the first returned definition.</p>
   </header>
 
-  <main>
-    <section>
-      <h2>Search</h2>
+  <!-- Main content area containing the search and result cards -->
+  <main class="container">
+
+    <!-- Search card: form that accepts a term from the user -->
+    <section class="card" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search</h2>
       <form id="search-form" novalidate>
         <label for="term-input">Term</label>
-        <div>
+        <div class="input-row">
           <input id="term-input" name="term" type="text" placeholder="Type a word (example: lit)" autocomplete="off"
             required />
           <button id="search-btn" type="submit">Search</button>
         </div>
-        <p>Tip: press Enter to search.</p>
+        <p class="hint">Tip: press Enter to search.</p>
       </form>
     </section>
 
-    <section>
-      <h2>Result</h2>
-      <div id="status" aria-live="polite">
+    <!-- Result card: displays the API response or status messages -->
+    <section class="card" aria-labelledby="result-heading">
+      <h2 id="result-heading">Result</h2>
+      <!-- Live region so screen readers announce status changes -->
+      <div id="status" class="status" aria-live="polite">
         Enter a term above to begin.
       </div>
-      <article id="result" aria-live="polite">
+      <!-- Article containing the definition details; hidden until a result loads -->
+      <article id="result" class="result hidden" aria-live="polite">
         <h3 id="result-term"></h3>
-        <p id="result-definition"></p>
-        <p id="result-example"></p>
-        <div>
+        <p id="result-definition" class="definition"></p>
+        <p id="result-example" class="example"></p>
+        <div class="meta">
           <span id="result-author"></span>
           <span id="result-votes"></span>
         </div>
@@ -45,6 +53,13 @@
     </section>
   </main>
 
+  <!-- Page footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Urban Dictionary Lookup &mdash; Assignment 4</p>
+  </footer>
+
+  <!-- Runtime configuration (injected API key) and application logic -->
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 
